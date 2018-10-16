@@ -4,7 +4,7 @@
   "description": "automation tasks",
   "main": "form-authentication.js",
   "scripts": {
-    "start": "node form-authentication"
+    "start": "mocha form-authentication"
   },
   "keywords": [
     "ps",
@@ -15,6 +15,7 @@
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.18.3",
-    "chai": "^4.2.0"
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0"
   }
 }

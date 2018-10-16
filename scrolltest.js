@@ -18,4 +18,4 @@ const url =	"http://the-internet.herokuapp.com/infinite_scroll";
 			}, 1000)
 		}
 
-infiniteScroll();		
+infiniteScroll();	
