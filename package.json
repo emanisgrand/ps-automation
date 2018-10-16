@@ -1,0 +1,20 @@
+{
+  "name": "ps-automation",
+  "version": "1.0.0",
+  "description": "automation tasks",
+  "main": "form-authentication.js",
+  "scripts": {
+    "start": "node form-authentication"
+  },
+  "keywords": [
+    "ps",
+    "tasks",
+    "automation"
+  ],
+  "author": "Emanuel Martinez",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "chai": "^4.2.0"
+  }
+}
