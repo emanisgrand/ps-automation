@@ -6,13 +6,16 @@ const url =	"http://the-internet.herokuapp.com/infinite_scroll";
 	
 
 	driver.get(url);
-
-	function infiniteScroll(num) { 		
-		for (var i = 0; i < num; i++) {
-				// driver.wait(webdriver.until.elementLocated(webdriver.By.className('no-js')));	
+	var i = -1;
+	function infiniteScroll() { 
+	setTimeout(function() { 		
+				driver.wait(webdriver.until.elementLocated(webdriver.By.className('jscroll-added')));	
 				driver.findElement(webdriver.By.className('no-js')).sendKeys(webdriver.Key.END);
-		
+				i++;
+				if (i <= 3) {
+					infiniteScroll();
 				}
-			}
+			}, 1000)
+		}
 
-infiniteScroll(3);	
+infiniteScroll();		
