@@ -6,12 +6,13 @@ var waitTime = 30000;
 
 //Real time web launcher
 var driver = new webdriver.Builder().forBrowser("chrome").build();
+const url =	"http://the-internet.herokuapp.com/login";
 
-	describe("Form Authentication", function() {
-		
-		it("Successfully log in ", function(){
-		driver.get('http://the-internet.herokuapp.com/login');
+formAuthentication();
 
+	function formAuthentication() {
+		//log enter site & log in
+		driver.get(url);
 		var element = driver.findElement(webdriver.By.id('username'));
 		element.sendKeys('tomsmith');
 
@@ -20,11 +21,8 @@ var driver = new webdriver.Builder().forBrowser("chrome").build();
 
 		var element = driver.findElement(webdriver.By.className('fa fa-2x fa-sign-in'));
 		element.submit(); 	
-	 	});
-	
-
-		it("Wait a sec, then log out", function() {
+		// make sure the right element is available, then log out
 			var results = driver.wait(webdriver.until.elementLocated(webdriver.By.xpath('//*[@id="content"]/div/a/i')), waitTime);
 			results.click();
-		});
-	});
+		
+	}
